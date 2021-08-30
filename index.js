@@ -60,7 +60,7 @@ class VideoPlayer extends React.Component {
         allSpeedColor: 'rgba(0,0,0,0.4)',
         propHeight: width * 210 / 375,
         propWidth: width,
-
+        fullscreen: false
     };
 
     constructor (props) {
@@ -1272,7 +1272,7 @@ class VideoPlayer extends React.Component {
                                         />
 
                                         {
-                                            this.state.smallP ?
+                                            this.props.fullscreen ? (this.state.smallP ?
                                                 <TouchableOpacity
                                                     activeOpacity={ 0.5 }
                                                     style={ {
@@ -1304,7 +1304,7 @@ class VideoPlayer extends React.Component {
                                                     >
                                                         <SvgVideoSmallBox height="20" width="20" />
                                                     </TouchableOpacity>
-                                                )
+                                                )) : <></>
                                         }
                                     </View>
                                     {
